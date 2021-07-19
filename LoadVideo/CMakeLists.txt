@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.21)
+project(LoadVideo)
+find_package(OpenCV REQUIRED)
+add_executable(LoadVideo app/LoadVideo.cpp)
+target_include_directories(LoadVideo PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(LoadVideo ${OpenCV_LIBS})

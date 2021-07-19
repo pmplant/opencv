@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.21)
+project(LoadImage)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+add_executable(LoadImage app/main.cpp)
+target_link_libraries(LoadImage ${OpenCV_LIBS})

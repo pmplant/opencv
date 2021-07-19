@@ -3,13 +3,18 @@
 
 int main(int argc, char **argv)
 {
+    cv::VideoCapture vid;
+    std::string file_path;
     if (argc < 2)
     {
-        std::cerr << "Usage: LoadVideo <PATH_TO_VIDEO_FILE>" << std::endl;
-        return EXIT_FAILURE;
+        file_path = "Webcam";
+        vid = cv::VideoCapture(cv::CAP_ANY);
     }
-    auto file_path = argv[1];
-    auto vid = cv::VideoCapture(file_path);
+    else
+    {
+        file_path = argv[1];
+        vid = cv::VideoCapture(file_path);
+    }
     if (!vid.isOpened())
     {
         std::cerr << "Failed to open video " << file_path << std::endl;

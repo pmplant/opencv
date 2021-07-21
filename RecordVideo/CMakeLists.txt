@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(RecordVideo)
+find_package(OpenCV REQUIRED)
+add_executable(RecordVideo app/RecordVideo.cpp)
+target_include_directories(RecordVideo PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(RecordVideo ${OpenCV_LIBS})

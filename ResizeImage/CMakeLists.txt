@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(ResizeImage)
+find_package(OpenCV REQUIRED)
+add_executable(ResizeImage app/ResizeImage.cpp)
+target_include_directories(ResizeImage PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(ResizeImage ${OpenCV_LIBS})
